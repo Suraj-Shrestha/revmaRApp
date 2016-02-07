@@ -1,0 +1,65 @@
+<ion-view view-title="Activitetoversikt">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="changeLanguage(1)">
+            <img src="img/no_flag.png" height="28" alt="">
+        </button>
+        <buton class="button" ng-click="changeLanguage(2)">
+            <img src="img/en_flag.png" height="28" alt="">
+        </buton>
+    </ion-nav-buttons>
+    <div class="bar bar-subheader">
+        <h2 class="title">Day Week Month Year</h2>
+    </div>
+
+    <ion-content class="has-header has-subheader padding">
+
+        <div class="topMenu">
+            <select ng-model="impOption" ng-change="changeOrder(1,impOption)">
+                <optgroup label="Important">
+                    <option selected hidden>Importance</option>
+                    <option value="veryImp">Very Important</option>
+                    <option value="mildImp">Mild Important</option>
+                    <option value="notImp">Not Important</option>
+                </optgroup>
+            </select>
+            <select ng-model="energyOption" ng-change="changeOrder(2,energyOption)">
+                <optgroup label="Energy">
+                    <option selected hidden>Energy</option>
+                    <option value="hi2lo">High to Low</option>
+                    <option value="lo2hi">Low To High</option>
+                </optgroup>
+            </select>
+            <select ng-model="motiveOption" ng-change="changeOrder(3,motiveOption)">
+                <optgroup label="Motive">
+                    <option selected hidden>Motive</option>
+                    <option value="duty">Duty</option>
+                    <option value="pleasure">Pleasure</option>
+                </optgroup>
+            </select>
+
+
+        </div>
+        <h4>List of Activities</h4>
+        <ion-list>
+            <div class="item activityItem" ng-repeat="activity in activities | orderBy:dynamicOrder:order.reverse track by $index">
+                <div class="mainContainer">
+                    <div class="leftDiv">
+                        <div class="divBarContainer" ng-style="{'width': activity.energy+'%'}">
+                            <div class="divBar">{{activity.energy}}%</div>
+                        </div>
+                    </div>
+                    <div class="informationContainer">
+                        <!--importance icon-->
+                        <img src="img/mi.png" alt="" ng-if="activity.importance=='mild important'">
+                        <img src="img/vi.png" alt="" ng-if="activity.importance=='very important'">
+                        <img src="img/ni.png" alt="" ng-if="activity.importance=='not important'">
+                        <!--Motive icons-->
+                        <img src="img/duty.png" alt="" ng-if="activity.motive=='duty'">
+                        <img src="img/pleasure.png" alt="" ng-if="activity.motive=='pleasure'">
+                    </div>
+                </div>
+            </div>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

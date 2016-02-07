@@ -1,0 +1,95 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+.activityItem {
+    margin: 0px !important;
+    padding: 0px !important;
+    border: 0px !important;
+}
+.mainContainer {
+    width: 100%;
+    height: 40px;
+    left: 0px;
+    margin-top: 15px;
+    display: inline-block;
+}
+.leftDiv {
+    width: 70%;
+}
+.divBarContainer {
+    float: left;
+    margin-right: 10px;
+    height: 100%;
+    z-index: 0;
+}
+.informationContainer {
+    width: 20%;
+    height: 40px;
+    z-index: 99;
+    img {
+        height: 40px;
+    }
+}
+.divBar {
+    background: royalblue;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+/*OverView Screen*/
+
+.topMenu {
+    background: red;
+    position:sticky;
+    top: 0;
+    display: table;
+    width: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+    select {
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 2px;
+        width: 32%;
+        display: table-cell;
+        height: 40px;
+    }
+}
+
+/*Settings Screen..*/
+
+.settingsList {
+    .item-divider {
+        color: dimgray !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+    }
+    .item {
+        font-size: 20px;
+        font-weight: 300;
+        padding-top: 25px;
+        height: 70px;
+    }
+}
