@@ -57,6 +57,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                     controller: 'SettingsCtrl'
                 }
             }
+        })
+        .state('tab.moreSettings', {
+            url: '/moreSettings:settingsId',
+            views: {
+                'tab-settings': {
+                    templateUrl: 'templates/tab-moreSettings.html',
+                    controller: 'MoreSettingsCtrl'
+                }
+            }
+
         });
 
     // if none of the above states are matched, use this as the fallback

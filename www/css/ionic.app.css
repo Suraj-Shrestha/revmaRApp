@@ -9731,6 +9731,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+html, body {
+  font-size: 69%; }
+
 .activityItem {
   margin: 0px !important;
   padding: 0px !important;
@@ -9740,7 +9743,7 @@ a.button {
   width: 100%;
   height: 40px;
   left: 0px;
-  margin-top: 15px;
+  margin-top: 10px;
   display: inline-block; }
 
 .leftDiv {
@@ -9764,13 +9767,12 @@ a.button {
   height: 40px;
   padding-top: 10px;
   padding-left: 5px;
-  font-size: 14px;
+  font-size: 1.0em;
   font-weight: 500;
   color: white; }
 
 /*OverView Screen*/
 .topMenu {
-  background: red;
   position: sticky;
   top: 0;
   display: table;
@@ -9778,21 +9780,38 @@ a.button {
   padding: 0px !important;
   margin: 0px !important; }
   .topMenu select {
-    font-size: 12px;
+    padding: 1px !important;
+    font-size: 1.7em;
     font-weight: 600;
     margin-right: 2px;
-    width: 32%;
+    width: 30%;
     display: table-cell;
     height: 40px; }
+  .topMenu select:first-child {
+    width: 38%; }
 
 /*Settings Screen..*/
 .settingsList .item-divider {
   color: dimgray !important;
-  font-size: 15px !important;
+  font-size: 2.0em !important;
   font-weight: 500 !important; }
 
 .settingsList .item {
-  font-size: 20px;
+  font-size: 2.5em;
   font-weight: 300;
   padding-top: 25px;
   height: 70px; }
+
+.colorIcon {
+  margin-top: 6px;
+  border-radius: 8px;
+  width: 38px;
+  max-height: 38px;
+  background: lightgray; }
+
+.customSelect {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1.3em;
+  border: 0 !important;
+  background: white; }

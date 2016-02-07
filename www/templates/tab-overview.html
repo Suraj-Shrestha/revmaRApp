@@ -1,8 +1,10 @@
 <ion-view view-title="Activitetoversikt">
     <ion-nav-buttons side="right">
+<!--
         <button class="button" ng-click="changeLanguage(1)">
             <img src="img/no_flag.png" height="28" alt="">
         </button>
+-->
         <buton class="button" ng-click="changeLanguage(2)">
             <img src="img/en_flag.png" height="28" alt="">
         </buton>
@@ -41,7 +43,7 @@
         </div>
         <h4>List of Activities</h4>
         <ion-list>
-            <div class="item activityItem" ng-repeat="activity in activities | orderBy:dynamicOrder:order.reverse track by $index">
+            <div class="item activityItem" ng-repeat="activity in activities | orderBy:field1Order:order.reverse1 track by $index">
                 <div class="mainContainer">
                     <div class="leftDiv">
                         <div class="divBarContainer" ng-style="{'width': activity.energy+'%'}">

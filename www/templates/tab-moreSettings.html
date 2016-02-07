@@ -1,0 +1,92 @@
+<ion-view view-title="{{viewTitle}}">
+    <div ng-include src="template.url" onload=''></div>
+</ion-view>
+
+
+
+
+<!-- colorSettings.html -->
+<script type="text/ng-template" id="colorSettings.html">
+    <ion-content>
+        <div class="list">
+            <a class="item item-icon-right" href="#" ng-click="" title="Activity Bars">
+                Activity Bars
+                <i class="icon colorIcon" ng-style="{'background':settings.activityColor}"></i>   
+            </a>
+            <a class="item item-icon-right" href="#" ng-click="" title="Background">
+                 Background
+                <i class="icon colorIcon" ng-style="{'background':settings.BgColor}"></i>  
+            </a>
+            <a class="item item-icon-right" href="#" ng-click="" title="Icons">
+                Icons 
+                <i class="icon colorIcon" ng-style="{'background':settings.iconColor}"></i>    
+            </a>
+            <a class="item" href="#" ng-click="" title="Textual Contrast Ratio">
+                Textual Contrast Ratio
+                    <select class="item-note customSelect">
+                        <option>4:5:1</option>
+                        <option selected>7:1</option>
+                    </select>
+            </a>
+
+
+
+        </div>
+    </ion-content>
+</script>
+
+<!-- textSettings.html -->
+<script type="text/ng-template" id="textSettings.html">
+    <ion-content>
+        <a class="item" href="#" ng-click="" title="Icons">
+                Size 
+                <select class="item-note customSelect">
+                        <option>Small Aa</option>
+                        <option selected>Medium Aa</option>
+                        <option>Large Aa</option>
+                        <option>Extra Large Aa</option>
+                    </select>
+            </a>
+
+    </ion-content>
+</script>
+<!-- voiceSettings.html -->
+<script type="text/ng-template" id="voiceSettings.html">
+    <ion-content>
+        <div class="list">
+            <div class="item range range-positive">Speed &nbsp;
+                <i class="icon ion-ios-minus-empty"></i>
+                <input type="range" name="volume" min="0" max="100" value="33">
+                <i class="icon ion-ios-plus-empty"></i>
+            </div>
+
+            <li class="item item-toggle">
+                Turn
+                <label class="toggle toggle-positive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </div>
+
+    </ion-content>
+</script>
+
+<!-- tactileSettings.html -->
+<script type="text/ng-template" id="tactileSettings.html">
+    <ion-content>
+        <ion-list>
+            <li class="item item-toggle">
+                Activate
+                <label class="toggle toggle-positive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </ion-list>
+    </ion-content>
+</script>
