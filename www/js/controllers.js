@@ -23,24 +23,28 @@ angular.module('starter.controllers', [])
         $scope.motiveOption = "Motive";
         $scope.impOption = "Importance";
         //This is for changing the overview when the top part is clicked!
-        $scope.changeOrder = function (which, value) {
-            console.log("which:" + which);
-            switch (which) {
-                case 1: //importance...
-
-                    break;
-                case 2: //energy
+        $scope.changeOrder = function ( value) {
                     $scope.order.field1 = "energy";
                     if (value == 'hi2lo')
                         $scope.order.reverse1 = true;
                     if (value == 'lo2hi')
                         $scope.order.reverse1 = false;
-                    break;
-                case 3: //motive
-                    break;
-            }
-        }
 
+        }
+        $scope.changeImpValue = function(value){$scope.impOption =value;}
+        $scope.changeMotiveValue = function(value){$scope.motiveOption = value;}
+        //filter for importance...
+        $scope.importanceFilter = function(value){
+            if($scope.impOption == "Importance")return true;
+            if($scope.impOption == value.importance)return true;
+            return false;
+        }
+        //filter for motive...
+        $scope.motiveFilter = function(value){
+            if($scope.motiveOption == "Motive")return true;
+            if($scope.motiveOption == value.motive) return true;
+            return false;
+        }
 
 
 

@@ -16,22 +16,22 @@
     <ion-content class="has-header has-subheader padding">
 
         <div class="topMenu">
-            <select ng-model="impOption" ng-change="changeOrder(1,impOption)">
-                <optgroup label="Important">
+            <select ng-model="impOption" ng-change="changeImpValue(impOption)">
+                <optgroup label="Important" >
                     <option selected hidden>Importance</option>
-                    <option value="veryImp">Very Important</option>
-                    <option value="mildImp">Mild Important</option>
-                    <option value="notImp">Not Important</option>
+                    <option value="very important">Very Important</option>
+                    <option value="mild important">Mild Important</option>
+                    <option value="not important">Not Important</option>
                 </optgroup>
             </select>
-            <select ng-model="energyOption" ng-change="changeOrder(2,energyOption)">
+            <select ng-model="energyOption" ng-change="changeOrder(energyOption)">
                 <optgroup label="Energy">
                     <option selected hidden>Energy</option>
                     <option value="hi2lo">High to Low</option>
                     <option value="lo2hi">Low To High</option>
                 </optgroup>
             </select>
-            <select ng-model="motiveOption" ng-change="changeOrder(3,motiveOption)">
+            <select ng-model="motiveOption" ng-change="changeMotiveValue(motiveOption)">
                 <optgroup label="Motive">
                     <option selected hidden>Motive</option>
                     <option value="duty">Duty</option>
@@ -43,8 +43,9 @@
         </div>
         <h4>List of Activities</h4>
         <ion-list>
-            <div class="item activityItem" ng-repeat="activity in activities | orderBy:field1Order:order.reverse1 track by $index">
-                <div class="mainContainer">
+           <div class="emptyMsg">No Activities found!</div>
+            <div class="item activityItem" ng-repeat="activity in activities | orderBy:field1Order:order.reverse1 | filter:importanceFilter | filter:motiveFilter track by $index">
+                   <div class="mainContainer">
                     <div class="leftDiv">
                         <div class="divBarContainer" ng-style="{'width': activity.energy+'%'}">
                             <div class="divBar">{{activity.energy}}%</div>
@@ -61,6 +62,7 @@
                     </div>
                 </div>
             </div>
+            
         </ion-list>
 
     </ion-content>
